@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{7EF05BFD-A062-3F7E-ACE8-590B44220907}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,16 +57,29 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\General\Controllers\EnemyInitialization.cs" />
+    <Compile Include="Assets\Scripts\General\Controllers\GameInitialization.cs" />
+    <Compile Include="Assets\Scripts\General\Controllers\SpawnerInitialization.cs" />
+    <Compile Include="Assets\Scripts\General\Enemies\CompositeSpawner.cs" />
+    <Compile Include="Assets\Scripts\General\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\General\Enemies\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\General\Enemies\IEnemy.cs" />
+    <Compile Include="Assets\Scripts\General\Enemies\ISpawner.cs" />
+    <Compile Include="Assets\Scripts\General\Extension\BuilderExtension.cs" />
+    <Compile Include="Assets\Scripts\General\Extension\ObjectExtensions.cs" />
+    <Compile Include="Assets\Scripts\General\Interfaces\IViewService.cs" />
+    <Compile Include="Assets\Scripts\General\Managers\ServiceLocator.cs" />
+    <Compile Include="Assets\Scripts\General\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\General\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\Scripts\General\Pool\ViewViewService.cs" />
+    <Compile Include="Assets\Scripts\General\Stats\Health.cs" />
     <Compile Include="Assets\Scripts\Test\Example3.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\ViewServices.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\IInitialization.cs" />
     <Compile Include="Assets\Scripts\Test\Player.cs" />
-    <Compile Include="Assets\Scripts\General\Enemies\IEnemy.cs" />
     <Compile Include="Assets\Scripts\Object Pool\EnemyPool.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\ICleanup.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\EnemyType.cs" />
-    <Compile Include="Assets\Scripts\General\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\PCInput.cs" />
     <Compile Include="Assets\Scripts\General\Data\PlayerConfig.cs" />
     <Compile Include="Assets\Scripts\General\UserInput\PCInputFire.cs" />
@@ -83,6 +97,7 @@
     <Compile Include="Assets\Scripts\RotationShip.cs" />
     <Compile Include="Assets\Scripts\General\Data\GameConfig.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\IPlatform.cs" />
+    <Compile Include="Assets\Scripts\GameStarter.cs" />
     <Compile Include="Assets\Scripts\General\Player\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\Test\Mob.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\InputController.cs" />
@@ -96,10 +111,8 @@
     <Compile Include="Assets\Scripts\General\Player\MoveRigidbody.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Test\IInventory.cs" />
-    <Compile Include="Assets\Scripts\General\Controllers\GameInitialization.cs" />
     <Compile Include="Assets\Scripts\General\UserInput\PCInputHorizontal.cs" />
     <Compile Include="Assets\Scripts\Test\Inventory.cs" />
-    <Compile Include="Assets\Scripts\General\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\CompositeMove.cs" />
     <Compile Include="Assets\Scripts\Test\Ammunition.cs" />
     <Compile Include="Assets\Scripts\General\Player\IWeapon.cs" />
@@ -117,7 +130,6 @@
     <Compile Include="Assets\Scripts\Test\IAmmunition.cs" />
     <Compile Include="Assets\Scripts\General\Pool\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\Ship.cs" />
-    <Compile Include="Assets\Scripts\General\Controllers\EnemyInitialization.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\WeaponController.cs" />
     <Compile Include="Assets\Scripts\MoveTransform.cs" />
@@ -138,30 +150,29 @@
     <Compile Include="Assets\Scripts\General\Interfaces\IMove.cs" />
     <Compile Include="Assets\Scripts\General\Player\PlayerBase.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\ILateExecute.cs" />
-    <Compile Include="Assets\Scripts\General\Pool\ViewServices.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\WindowFactory.cs" />
     <Compile Include="Assets\Scripts\Test\PlayerFactory.cs" />
     <Compile Include="Assets\Scripts\Test\Map.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>F:\d3z new\2020.1.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
