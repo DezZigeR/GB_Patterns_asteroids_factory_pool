@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\General\Controllers\EnemyInitialization.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\GameInitialization.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\SpawnerInitialization.cs" />
+    <Compile Include="Assets\Scripts\General\Controllers\WeaponController.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\CompositeSpawner.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\EnemySpawner.cs" />
@@ -70,9 +71,47 @@
     <Compile Include="Assets\Scripts\General\Interfaces\IViewService.cs" />
     <Compile Include="Assets\Scripts\General\Managers\ServiceLocator.cs" />
     <Compile Include="Assets\Scripts\General\Player\Bullet.cs" />
+    <Compile Include="Assets\Scripts\General\Player\IWeapon.cs" />
+    <Compile Include="Assets\Scripts\General\Player\LockedWeapon.cs" />
+    <Compile Include="Assets\Scripts\General\Player\MoveRigidbody.cs" />
+    <Compile Include="Assets\Scripts\General\Player\MoveTransform.cs" />
+    <Compile Include="Assets\Scripts\General\Player\PlayerBase.cs" />
     <Compile Include="Assets\Scripts\General\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\Scripts\General\Player\WeaponProxy.cs" />
     <Compile Include="Assets\Scripts\General\Pool\ViewViewService.cs" />
     <Compile Include="Assets\Scripts\General\Stats\Health.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Adapter\Editor\ExampleWithDictionaryEditor.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Adapter\ExampleWithDictionary.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\Example.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\IAttack.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\IMove.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\Infantry.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\MagicalAttack.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\MeleeAttack.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\Navy.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Bridge\RangedAttack.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\CompositeFactory.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\EnemyData.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\Example.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\IEnemy.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\Infantry.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Composite\Mag.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Data\MufflerConfig.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Data\TelescopicSightConfig.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Data\WeaponConfig.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Example.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\IAmmunition.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\IFire.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\IMuffler.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\ITelescopicSight.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\ModificationMuffler.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\ModificationSight.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\ModificationWeapon.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Muffler.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\TelescopicSight.cs" />
+    <Compile Include="Assets\Scripts\Lesson5\Decorator\Weapon.cs" />
     <Compile Include="Assets\Scripts\Test\Example3.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\ViewServices.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\IInitialization.cs" />
@@ -98,7 +137,6 @@
     <Compile Include="Assets\Scripts\General\Data\GameConfig.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\IPlatform.cs" />
     <Compile Include="Assets\Scripts\GameStarter.cs" />
-    <Compile Include="Assets\Scripts\General\Player\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\Test\Mob.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\InputController.cs" />
     <Compile Include="Assets\Scripts\Test\IMap.cs" />
@@ -108,14 +146,12 @@
     <Compile Include="Assets\Scripts\Test\Weapon.cs" />
     <Compile Include="Assets\Scripts\General\GameController.cs" />
     <Compile Include="Assets\Scripts\Test\Example.cs" />
-    <Compile Include="Assets\Scripts\General\Player\MoveRigidbody.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\Test\IInventory.cs" />
     <Compile Include="Assets\Scripts\General\UserInput\PCInputHorizontal.cs" />
     <Compile Include="Assets\Scripts\Test\Inventory.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\CompositeMove.cs" />
     <Compile Include="Assets\Scripts\Test\Ammunition.cs" />
-    <Compile Include="Assets\Scripts\General\Player\IWeapon.cs" />
     <Compile Include="Assets\Scripts\IRotation.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\InputInitialization.cs" />
@@ -131,7 +167,6 @@
     <Compile Include="Assets\Scripts\General\Pool\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\General\Enemies\Ship.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\General\Controllers\WeaponController.cs" />
     <Compile Include="Assets\Scripts\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\Object Pool\NameManager.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\PlatformFactory.cs" />
@@ -148,13 +183,22 @@
     <Compile Include="Assets\Scripts\Test\Example2.cs" />
     <Compile Include="Assets\Scripts\General\Controllers\PlayerInitialization.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\IMove.cs" />
-    <Compile Include="Assets\Scripts\General\Player\PlayerBase.cs" />
     <Compile Include="Assets\Scripts\General\Interfaces\ILateExecute.cs" />
     <Compile Include="Assets\Scripts\Abstrac Factory\WindowFactory.cs" />
     <Compile Include="Assets\Scripts\Test\PlayerFactory.cs" />
     <Compile Include="Assets\Scripts\Test\Map.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Scripts\Lesson5\Composite\data.json" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Configs\muffler_config.asset" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Configs\telescopic_sight_config.asset" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Configs\weapon_config.asset" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Prefabs\bullet.prefab" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Prefabs\muffler.prefab" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Prefabs\sight.prefab" />
+    <None Include="Assets\Scripts\Lesson5\Decorator\Prefabs\weapon.prefab" />
+    <None Include="Assets\Scripts\Lesson5\Lesson5.asmdef" />
+    <None Include="Assets\Scripts\Lesson5\Lesson5.asmdef.meta" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -735,8 +779,7 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
