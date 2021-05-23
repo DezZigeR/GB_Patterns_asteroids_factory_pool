@@ -1,6 +1,10 @@
 ﻿using General.Interfaces;
 using General.Player;
+using General.Enemies;
 using UnityEngine;
+using System;
+using General.Interfaces;
+using Object = UnityEngine.Object;
 
 namespace General.Controllers
 {
@@ -8,6 +12,7 @@ namespace General.Controllers
     {
         private float _hp;
         private PlayerBase _player;
+        public event Action OnDeath;
 
         public HealthController(PlayerBase player, float hp)
         {
@@ -20,15 +25,20 @@ namespace General.Controllers
             _player.OnCollisionEnterChange += OnCollisionPlayer;
         }
 
-        private void OnCollisionPlayer(GameObject enemy)
+        private void OnCollisionPlayer(GameObject other)
         {
             if (_hp <= 0)
             {
+                var enemy = other.GetComponent<Enemy>();
+
+            if (!enemy)
+                return;
                 Object.Destroy(_player);
+                OnDeath?.Invoke();
             }
             else
             {
-                _hp--;
+                _hp -= enemy.Abilities.MaxDamage; 
             }
         }
         

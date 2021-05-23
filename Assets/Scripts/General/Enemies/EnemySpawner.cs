@@ -5,6 +5,7 @@ using General.Interfaces;
 using General.Player;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using General.MessageBroker;
 
 namespace General.Enemies
 {
@@ -54,8 +55,18 @@ namespace General.Enemies
                     var newEnemy = SpawnEnemy();
                     Object.Destroy(_enemy.gameObject);
                     _enemy = newEnemy;
+                    
+                    var message = new EnemyDestroyMessage()
+                    {
+                        points = _enemy.Points
+                    };
+                    SimpleMessageBroker.Publish<EnemyDestroyMessage>(message);
                 }
             }
+        }
+        public class EnemyDestroyMessage
+        {
+            public int points;
         }
     }
 }

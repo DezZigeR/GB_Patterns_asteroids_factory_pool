@@ -14,6 +14,7 @@ namespace General
         public int HP;
         public float Speed;
         public Transform SpawnPosition;
+        public int Points = 1;
     }
     
     [CreateAssetMenu(fileName = "EnemiesConfig", menuName = "Configs/EnemiesConfig", order = 0)]
@@ -23,11 +24,11 @@ namespace General
         private List<EnemyInfo> _enemies;
 
         public List<EnemyInfo> Enemies => _enemies;
-        
-        public (Enemy enemy, int hp) GetEnemy(EnemyType type)
+
+        public (Enemy enemy, int hp, int points) GetEnemy(EnemyType type)
         {
             var enemyInfo = _enemies.First(info => info.Type == type);
-            return (enemyInfo.EnemyPrefab, enemyInfo.HP);
+            return (enemyInfo.EnemyPrefab, enemyInfo.HP, enemyInfo.Points);
         }
     }
 }
