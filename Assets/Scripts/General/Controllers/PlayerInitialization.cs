@@ -1,5 +1,6 @@
 ﻿using General.Interfaces;
 using General.Player;
+using General.Player.States;
 using UnityEngine;
 
 namespace General.Controllers
@@ -17,6 +18,9 @@ namespace General.Controllers
         public PlayerInitialization(PlayerConfig playerConfig)
         {
             _player = Object.Instantiate(playerConfig.playerPrefab);
+
+            _player.State = new FlyState();
+            _player.RequestState();
 
             var rigidbody = _player.GetComponent<Rigidbody2D>();
 
